@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="description"/>
+        <meta name="keywords"/>
+        <title>Home page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+              rel="stylesheet"
+              integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+              crossorigin="anonymous"/>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Breast Cancer Diagnosis</h1>
+            <form action="{% url 'result' %}">
+                {% csrf_token %}
+                
+                <div>
+                    <label>Mean Radius:</label>
+                    <input type="text" class="form-control" name="mean_radius"/>
+                    <div class="form-text" id="basic-addon4">(Float) Enter a value from 6.98 - 28.11.</div>
+                    <br/>
+                </div>
+                
+                <div>
+                    <label>Mean Texture:</label>
+                    <input type="text" class="form-control" name="mean_texture"/>
+                    <div class="form-text" id="basic-addon4">(Float) Enter a value from 9.71 - 39.28.</div>
+                    <br/>
+                </div>
+
+                <div>
+                    <label>Mean Perimeter:</label>
+                    <input type="text" class="form-control" name="mean_perimeter"/>
+                    <div class="form-text" id="basic-addon4">(Float) Enter a value from 43.79 - 188.50.</div>
+                    <br/>
+                </div>
+
+                <div>
+                    <label>Mean Area:</label>
+                    <input type="text" class="form-control" name="mean_area"/>
+                    <div class="form-text" id="basic-addon4">(Float) Enter a value from 143.50 - 2501.00.</div>
+                    <br/>
+                </div>
+
+                <div>
+                    <label>Mean Smoothness:</label>
+                    <input type="text" class="form-control" name="mean_smoothness"/>
+                    <div class="form-text" id="basic-addon4">(Float) Enter a value from 0.052630 - 0.163400.</div>
+                    <br/>
+                </div>
+
+                <div>
+                    <input type="submit" value='Get Predictions' class="btn btn-primary btn-sm"/>
+                </div>
+                
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+                crossorigin="anonymous"></script>
+    </body>
+</html>
